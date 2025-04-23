@@ -1,0 +1,7 @@
+[theme]
+base = "dark"
+primaryColor = "#bd93f9"               # roxinho Dracula (tipo o roxo principal)
+backgroundColor = "#282a36"            # fundo principal
+secondaryBackgroundColor = "#44475a"   # fundo de containers, cards, etc
+textColor = "#f8f8f2"                  # cor do texto principal (quase branco)
+font = "sans serif"
