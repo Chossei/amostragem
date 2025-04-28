@@ -188,7 +188,6 @@ try:
    # Configurações do gráfico
    ax.set_xlabel('Média')
    ax.set_ylabel('Densidade')
-   ax.grid(True)
 
    # Reproduzindo o gráfico
    st.markdown("<h3 style='text-align: center;'>Curvas de densidade de Kernel por Amostra</h3>", unsafe_allow_html=True)
