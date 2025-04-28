@@ -174,25 +174,28 @@ try:
    st.divider()
    # Criando o gráfico de densidade
 
-   valores = reposicao + sem_reposicao
-
-   grupos = ['Com reposição'] * len(reposicao) + ['Sem reposição'] * len(sem_reposicao)
-
-   dicionario = {'Média': valores, 'Amostra': grupos}
-
-   base = pd.DataFrame(dicionario)
+   esp1, esp2, esp3 = st.columns(3)
       
-   fig, ax = plt.subplots()
-   sns.kdeplot(data=base, x='Média', hue='Amostra', fill=True, common_norm=False, alpha=0.25, ax=ax)
+   with esp2:
+         valores = reposicao + sem_reposicao
       
-   # Configurações do gráfico
-   ax.set_xlabel('Média')
-   ax.set_ylabel('Densidade')
-
-   # Reproduzindo o gráfico
-   st.markdown("<h3 style='text-align: center;'>Curvas de densidade de Kernel por Amostra</h3>", unsafe_allow_html=True)
-
-   st.pyplot(fig, dpi=200, bbox_inches='tight')
+         grupos = ['Com reposição'] * len(reposicao) + ['Sem reposição'] * len(sem_reposicao)
+      
+         dicionario = {'Média': valores, 'Amostra': grupos}
+      
+         base = pd.DataFrame(dicionario)
+            
+         fig, ax = plt.subplots()
+         sns.kdeplot(data=base, x='Média', hue='Amostra', fill=True, common_norm=False, alpha=0.25, ax=ax)
+            
+         # Configurações do gráfico
+         ax.set_xlabel('Média')
+         ax.set_ylabel('Densidade')
+      
+         # Reproduzindo o gráfico
+         st.markdown("<h3 style='text-align: center;'>Curvas de densidade de Kernel por Amostra</h3>", unsafe_allow_html=True)
+      
+         st.pyplot(fig, dpi=200, bbox_inches='tight')
 
 
 except ValueError:
