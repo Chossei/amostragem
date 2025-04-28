@@ -173,9 +173,9 @@ try:
    st.divider()
    # Criando o gráfico de densidade
 
-   valores = medias_cr + medias_sr
+   valores = reposicao + sem_reposicao
 
-   grupos = ['Com reposição'] * len(medias_cr) + ['Sem reposição'] * len(medias_sr)
+   grupos = ['Com reposição'] * len(reposicao) + ['Sem reposição'] * len(sem_reposicao)
 
    dicionario = {'Média': valores, 'Amostra': grupos}
 
