@@ -170,5 +170,27 @@ try:
       st.markdown("<h3 style='text-align: center;'>Distribuição das médias sem reposição</h3>", unsafe_allow_html=True)
       st.pyplot(fig_srep)
 
+   st.divider()
+   # Criando o gráfico de densidade
+
+   valores = medias_cr + medias_sr
+
+   grupos = ['Com reposição'] * len(medias_cr) + ['Sem reposição'] * len(medias_sr)
+
+   dicionario = {'Média': valores, 'Amostra': grupos}
+
+   base = pd.DataFrame(dicionario)
+      
+   fig, ax = plt.subplots(figzise(8,6))
+   sns.kdeplot(data=base, x='Média', hue='Amostra', fill=True, common_norm=False, alpha=0.25, ax=ax)
+      
+    # Configurações do gráfico
+    ax.set_xlabel('Média')
+    ax.set_ylabel('Densidade')
+    ax.grid(True)
+    st.subheader('Curvas de densidade de Kernel por Amostra')
+    st.pyplot(fig)
+
+
 except ValueError:
       st.error('🚨 *ATENÇÃO*: o tamanho da amostra **não** pode ser maior que o da população!')
