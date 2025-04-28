@@ -174,7 +174,7 @@ try:
    st.divider()
    # Criando o gráfico de densidade
 
-   esp1, esp2, esp3 = st.columns([1, 2, 1])
+   esp1, esp2, esp3 = st.columns([1.25, 2, 1.25])
       
    with esp2:
          valores = reposicao + sem_reposicao
