@@ -184,12 +184,14 @@ try:
    fig, ax = plt.subplots(figzise(8,6))
    sns.kdeplot(data=base, x='Média', hue='Amostra', fill=True, common_norm=False, alpha=0.25, ax=ax)
       
-    # Configurações do gráfico
-    ax.set_xlabel('Média')
-    ax.set_ylabel('Densidade')
-    ax.grid(True)
-    st.subheader('Curvas de densidade de Kernel por Amostra')
-    st.pyplot(fig)
+   # Configurações do gráfico
+   ax.set_xlabel('Média')
+   ax.set_ylabel('Densidade')
+   ax.grid(True)
+
+   # Reproduzindo o gráfico
+   st.subheader('Curvas de densidade de Kernel por Amostra')
+   st.pyplot(fig)
 
 
 except ValueError:
