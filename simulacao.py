@@ -193,7 +193,7 @@ try:
    # Reproduzindo o gráfico
    st.markdown("<h3 style='text-align: center;'>Curvas de densidade de Kernel por Amostra</h3>", unsafe_allow_html=True)
 
-   st.pyplot(fig)
+   st.pyplot(fig, dpi=200, bbox_inches='tight')
 
 
 except ValueError:
