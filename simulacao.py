@@ -182,7 +182,7 @@ try:
 
    base = pd.DataFrame(dicionario)
       
-   fig, ax = plt.subplots(figsize=(8,6))
+   fig, ax = plt.subplots(figsize=(5,3))
    sns.kdeplot(data=base, x='Média', hue='Amostra', fill=True, common_norm=False, alpha=0.25, ax=ax)
       
    # Configurações do gráfico
