@@ -10,19 +10,17 @@ def simulacao(amostra, populacao):
       # Com reposição
       medias_cr = []
       tiras = range(1, populacao+1)
-      for i in range(1, amostra+1):
-        for j in range(1, 2501):
+      
+      for j in range(1, 2501):
           lista_cr = random.choices(population = tiras, weights = None,
-                            cum_weights = None, k = i)
+                            cum_weights = None, k = amostra)
           medias_cr.append(np.mean(lista_cr))
 
       # Sem reposição
       medias_sr = []
-      tiras = range(1, populacao+1)
 
-      for i in range(1, amostra+1):
-        for j in range(1, 2501):
-          lista_sr = random.sample(population = tiras, k = i)
+      for j in range(1, 2501):
+          lista_sr = random.sample(population = tiras, k = amostra)
           medias_sr.append(np.mean(lista_sr))
 
       return medias_cr, medias_sr
