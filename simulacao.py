@@ -56,16 +56,14 @@ st.markdown("""
 
 st.divider()
 
-amos, popu = st.columns(2, gap = 'large')
 
-with amos:
-      amostra = st.slider(label = 'Selecione o tamanho (acumulativo) da amostra:', min_value = 1,
+amostra = st.sidebar.slider(label = 'Selecione o tamanho da amostra:', min_value = 1,
                     max_value = 10, value = 3, step = 1)
-with popu:
-   populacao = st.slider(label = 'Selecione o tamanho da população:', min_value = 1,
+
+populacao = st.sidebar.slider(label = 'Selecione o tamanho da população:', min_value = 1,
                     max_value = 10, value = 5, step = 1)
 
-if st.button('Repetir experimento'):
+if st.sidebar.button('Repetir experimento'):
    st.rerun()
 
 # definindo as variáveis e as figuras
