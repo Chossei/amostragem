@@ -17,7 +17,7 @@ def simulacao(amostra, populacao, n = 100000):
           lista_cr = random.choices(population = tiras, weights = None,
                             cum_weights = None, k = amostra)
           medias_cr.append(np.mean(lista_cr))
-          barra.progress(j + 1, text=progresso_texto)  
+          barra.progress((j + 1)/n, text=progresso_texto)  
 
       # Sem reposição
       medias_sr = []
