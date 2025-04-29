@@ -59,7 +59,7 @@ st.markdown("""
 
 st.divider()
 
-with st.sidebar():
+with st.sidebar:
       with st.form():
             amostra = st.slider(label = 'Selecione o tamanho da amostra:', min_value = 1,
                                 max_value = 10, value = 3, step = 1)
