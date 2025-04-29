@@ -67,7 +67,7 @@ bins = st.sidebar.slider(label = 'Selecione o tamanho de bins:', min_value = 10,
                     max_value = 100, value = 30, step = 1)
 
 n = st.sidebar.pills(label = 'Selecione a quantidade de repetições do experimento:',
-                     options = [1000, 10000, 10000])
+                     options = [1000, 10000, 10000], default = 1000)
 
 
 if st.sidebar.button('Repetir experimento'):
