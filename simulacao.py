@@ -25,9 +25,9 @@ def simulacao(amostra, populacao, n = 100000):
 
       return medias_cr, medias_sr
 
-def histograma(data):
+def histograma(data, bins):
   fig, ax = plt.subplots()
-  sns.histplot(data = data, stat = 'probability', ax = ax, bins = 60)
+  sns.histplot(data = data, stat = 'probability', ax = ax, bins = bins)
   ax.set_xlabel('Médias')
   ax.set_ylabel('Proporção')
   plt.close(fig)
@@ -62,6 +62,9 @@ amostra = st.sidebar.slider(label = 'Selecione o tamanho da amostra:', min_value
 
 populacao = st.sidebar.slider(label = 'Selecione o tamanho da população:', min_value = 1,
                     max_value = 10, value = 5, step = 1)
+
+bins = st.sidebar.slider(label = 'Selecione o tamanho de bins:', min_value = 10,
+                    max_value = 100, value = 30, step = 1)
 
 if st.sidebar.button('Repetir experimento'):
    st.rerun()
