@@ -64,7 +64,7 @@ populacao = st.sidebar.slider(label = 'Selecione o tamanho da população:', min
                     max_value = 10, value = 5, step = 1)
 
 bins = st.sidebar.slider(label = 'Selecione o tamanho de bins:', min_value = 10,
-                    max_value = 100, value = 30, step = 1)
+                    max_value = 500, value = 30, step = 1)
 
 n = st.sidebar.radio(label = 'Selecione a quantidade de repetições do experimento:',
                      options = [100, 1000, 10000, 100000, 1000000], index = 2)
