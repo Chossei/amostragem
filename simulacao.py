@@ -74,8 +74,9 @@ with st.form('amostragem'):
                            options = [100, 1000, 10000, 100000, 1000000, 10000000], index = 2)
       
       
-      if st.sidebar.form_submit_button('Repetir experimento'):
-         st.rerun()
+      submitted = st.sidebar.form_submit_button('Repetir experimento'):
+      if submitted:
+            st.rerun()
 
 
 # definindo as variáveis e as figuras
