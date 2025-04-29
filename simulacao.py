@@ -15,6 +15,7 @@ def simulacao(amostra, populacao, n = 100000):
           lista_cr = random.choices(population = tiras, weights = None,
                             cum_weights = None, k = amostra)
           medias_cr.append(np.mean(lista_cr))
+          barra.progress(j + 1, text=progresso_texto)  
 
       # Sem reposição
       medias_sr = []
@@ -72,6 +73,10 @@ n = st.sidebar.radio(label = 'Selecione a quantidade de repetições do experime
 
 if st.sidebar.button('Repetir experimento'):
    st.rerun()
+
+progresso_texto = "Calma mi vida, tá de buenas. Cuase pronto..."
+barra = st.progress(0, text=progresso_texto)
+
 
 # definindo as variáveis e as figuras
 try:
