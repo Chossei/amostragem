@@ -72,8 +72,8 @@ if st.sidebar.button('Repetir experimento'):
 # definindo as variáveis e as figuras
 try: 
    reposicao, sem_reposicao = simulacao(amostra, populacao)
-   fig_rep = histograma(reposicao)
-   fig_srep = histograma(sem_reposicao)
+   fig_rep = histograma(reposicao, bins)
+   fig_srep = histograma(sem_reposicao, bins)
 
    # Calculando as métricas ----------------------
    # Com reposição
