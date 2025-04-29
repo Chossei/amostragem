@@ -6,7 +6,7 @@ import streamlit as st
 import random
 
 
-def simulacao(amostra, populacao, n = 10000):
+def simulacao(amostra, populacao, n = 100000):
       # Com reposição
       medias_cr = []
       tiras = range(1, populacao+1)
