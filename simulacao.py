@@ -43,7 +43,7 @@ st.set_page_config(
     page_title="Simulação 1",
     layout="wide",
     page_icon="🎲",
-    initial_sidebar_state="collapsed"  # opcional, se quiser a sidebar já aberta
+    #initial_sidebar_state="collapsed"  # opcional, se quiser a sidebar já aberta
 )
 
 st.title('🎲 Simulação - Amostragem A - 2025.1')
