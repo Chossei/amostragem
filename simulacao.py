@@ -6,12 +6,12 @@ import streamlit as st
 import random
 
 
-def simulacao(amostra, populacao):
+def simulacao(amostra, populacao, n = 10000):
       # Com reposição
       medias_cr = []
       tiras = range(1, populacao+1)
       
-      for j in range(1, 2501):
+      for j in range(n):
           lista_cr = random.choices(population = tiras, weights = None,
                             cum_weights = None, k = amostra)
           medias_cr.append(np.mean(lista_cr))
@@ -19,7 +19,7 @@ def simulacao(amostra, populacao):
       # Sem reposição
       medias_sr = []
 
-      for j in range(1, 2501):
+      for j in range(n):
           lista_sr = random.sample(population = tiras, k = amostra)
           medias_sr.append(np.mean(lista_sr))
 
