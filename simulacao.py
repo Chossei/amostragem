@@ -7,6 +7,7 @@ import random
 
 
 def simulacao(amostra, populacao, n = 100000):
+      global barra 
       # Com reposição
       medias_cr = []
       tiras = range(1, populacao+1)
