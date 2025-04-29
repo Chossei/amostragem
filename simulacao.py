@@ -7,7 +7,7 @@ import random
 
 
 def simulacao(amostra, populacao, n = 100000):
-      global barra 
+      
       # Com reposição
       medias_cr = []
       tiras = range(1, populacao+1)
@@ -81,8 +81,7 @@ barra = st.progress(0, text=progresso_texto)
 
 # definindo as variáveis e as figuras
 try:
-   with st.spinner(show_time=True):
-         reposicao, sem_reposicao = simulacao(amostra, populacao, int(n))
+   reposicao, sem_reposicao = simulacao(amostra, populacao, int(n))
    fig_rep = histograma(reposicao, bins)
    fig_srep = histograma(sem_reposicao, bins)
 
