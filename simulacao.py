@@ -7,7 +7,8 @@ import random
 
 
 def simulacao(amostra, populacao, n = 100000):
-      
+      progresso_texto = "Calma mi vida, tá de buenas. Cuase pronto..."
+      barra = st.progress(0, text=progresso_texto)
       # Com reposição
       medias_cr = []
       tiras = range(1, populacao+1)
@@ -74,9 +75,6 @@ n = st.sidebar.radio(label = 'Selecione a quantidade de repetições do experime
 
 if st.sidebar.button('Repetir experimento'):
    st.rerun()
-
-progresso_texto = "Calma mi vida, tá de buenas. Cuase pronto..."
-barra = st.progress(0, text=progresso_texto)
 
 
 # definindo as variáveis e as figuras
