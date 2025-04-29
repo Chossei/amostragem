@@ -27,7 +27,7 @@ def simulacao(amostra, populacao, n = 100000):
 
 def histograma(data):
   fig, ax = plt.subplots()
-  sns.histplot(data = data, stat = 'probability', ax = ax, bins = 30)
+  sns.histplot(data = data, stat = 'probability', ax = ax, bins = 60)
   ax.set_xlabel('Médias')
   ax.set_ylabel('Proporção')
   plt.close(fig)
