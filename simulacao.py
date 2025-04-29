@@ -65,6 +65,9 @@ with popu:
    populacao = st.slider(label = 'Selecione o tamanho da população:', min_value = 1,
                     max_value = 10, value = 5, step = 1)
 
+if st.button('Repetir experimento'):
+   st.rerun()
+
 # definindo as variáveis e as figuras
 try: 
    reposicao, sem_reposicao = simulacao(amostra, populacao)
