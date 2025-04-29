@@ -74,8 +74,9 @@ if st.sidebar.button('Repetir experimento'):
    st.rerun()
 
 # definindo as variáveis e as figuras
-try: 
-   reposicao, sem_reposicao = simulacao(amostra, populacao, int(n))
+try:
+   with st.spinner(show_time=True):
+         reposicao, sem_reposicao = simulacao(amostra, populacao, int(n))
    fig_rep = histograma(reposicao, bins)
    fig_srep = histograma(sem_reposicao, bins)
 
