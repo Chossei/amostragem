@@ -66,15 +66,16 @@ populacao = st.sidebar.slider(label = 'Selecione o tamanho da população:', min
 bins = st.sidebar.slider(label = 'Selecione o tamanho de bins:', min_value = 10,
                     max_value = 100, value = 30, step = 1)
 
-n = int(st.sidebar.pills(label = 'Selecione a quantidade de repetições do experimento:',
-                     options = [1000, 10000, 10000]))
+n = st.sidebar.pills(label = 'Selecione a quantidade de repetições do experimento:',
+                     options = [1000, 10000, 10000])
+
 
 if st.sidebar.button('Repetir experimento'):
    st.rerun()
 
 # definindo as variáveis e as figuras
 try: 
-   reposicao, sem_reposicao = simulacao(amostra, populacao, n)
+   reposicao, sem_reposicao = simulacao(amostra, populacao, int(n))
    fig_rep = histograma(reposicao, bins)
    fig_srep = histograma(sem_reposicao, bins)
 
