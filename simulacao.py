@@ -7,8 +7,6 @@ import random
 
 
 def simulacao(amostra, populacao, n = 100000):
-      progresso_texto = "Calma mi vida, tá de buenas. Cuase pronto..."
-      barra = st.progress(0, text=progresso_texto)
       # Com reposição
       medias_cr = []
       tiras = range(1, populacao+1)
@@ -17,7 +15,6 @@ def simulacao(amostra, populacao, n = 100000):
           lista_cr = random.choices(population = tiras, weights = None,
                             cum_weights = None, k = amostra)
           medias_cr.append(np.mean(lista_cr))
-          barra.progress((j + 1)/n, text=progresso_texto)  
 
       # Sem reposição
       medias_sr = []
