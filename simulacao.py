@@ -76,7 +76,8 @@ with st.sidebar:
 
 # definindo as variáveis e as figuras
 try:
-   with st.spinner('Calma vida, tá de boa...'):   
+   with st.spinner('Calma vida, tá de boa...'):
+         start = time.perf_counter()  
          reposicao, sem_reposicao = simulacao(amostra, populacao, int(n))
          fig_rep = histograma(reposicao, bins)
          fig_srep = histograma(sem_reposicao, bins)
@@ -204,7 +205,9 @@ try:
                st.markdown("<h3 style='text-align: center;'>Curvas de densidade de Kernel por Amostra</h3>", unsafe_allow_html=True)
             
                st.pyplot(fig, dpi=200, bbox_inches='tight')
+         end = time.perf_counter()
 
-
+   st.success('É o naipe!')
+   st.info(f'Processo finalizado em {end - start:.2f} segundos')   
 except ValueError:
       st.error('🚨 *ATENÇÃO*: o tamanho da amostra **não** pode ser maior que o da população!')
