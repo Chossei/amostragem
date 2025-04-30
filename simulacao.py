@@ -76,133 +76,134 @@ with st.sidebar:
 
 # definindo as variáveis e as figuras
 try:
-   reposicao, sem_reposicao = simulacao(amostra, populacao, int(n))
-   fig_rep = histograma(reposicao, bins)
-   fig_srep = histograma(sem_reposicao, bins)
-
-   # Calculando as métricas ----------------------
-   # Com reposição
-   minimo_cr = float(np.min(reposicao))
-   esperado_cr = float(np.mean(reposicao))
-   mediana_cr = float(np.median(reposicao))
-   dp_cr = float(np.std(reposicao))
-   max_cr = float(np.max(reposicao))
-
-   # Sem reposição
-
-   minimo_sr = float(np.min(sem_reposicao))
-   esperado_sr = float(np.mean(sem_reposicao))
-   mediana_sr = float(np.median(sem_reposicao))
-   dp_sr = float(np.std(sem_reposicao))
-   max_sr = float(np.max(sem_reposicao))
-
-   # Cálculo da diferença para uso no st.metric
-
-   metric_min = round(minimo_sr - minimo_cr, ndigits=2)
-   metric_mean = round(esperado_sr - esperado_cr, ndigits=2)
-   metric_median = round(mediana_sr - mediana_cr, ndigits=2)
-   metric_dp = round(dp_sr - dp_cr, ndigits=2)
-   metric_max = round(max_sr - max_cr, ndigits=2)
-
-   # Reproduzindo os resultados ---------------
-
-   st.subheader('🔁 Com reposição')
-
-   c1, c2, c3, c4, c5 = st.columns(5)
-
-   with c1:
-      st.metric(label = 'Mínimo',
-         value = round(minimo_cr, ndigits = 4))
-
-   with c2:
-      st.metric(label = 'Valor esperado',
-         value = round(esperado_cr, ndigits = 4))
-
-   with c3:
-      st.metric(label = 'Mediana',
-         value = round(mediana_cr, ndigits = 4))
-
-   with c4:
-      st.metric(label = 'Desvio padrão',
-         value = round(dp_cr, ndigits = 4))
-
-   with c5:
-      st.metric(label = 'Máximo',
-         value = round(max_cr, ndigits = 4))
+   with st.spinner('Calma vida, tá de boa...'):   
+         reposicao, sem_reposicao = simulacao(amostra, populacao, int(n))
+         fig_rep = histograma(reposicao, bins)
+         fig_srep = histograma(sem_reposicao, bins)
       
-   st.divider()
-
-   st.subheader('🚫 Sem reposição')
-
-   s1, s2, s3, s4, s5 = st.columns(5)
-
-   with s1:
-      st.metric(label = 'Mínimo',
-         value = round(minimo_sr, ndigits = 4),
-         delta=metric_min)
-
-   with s2:
-      st.metric(label = 'Valor esperado',
-         value = round(esperado_sr, ndigits = 4),
-         delta=metric_mean)
-
-   with s3:
-      st.metric(label = 'Mediana',
-         value = round(mediana_sr, ndigits = 4),
-         delta=metric_median)
-
-   with s4:
-      st.metric(label = 'Desvio padrão',
-         value = round(dp_sr, ndigits = 4),
-         delta=metric_dp)
-
-   with s5:
-      st.metric(label = 'Máximo',
-         value = round(max_sr, ndigits = 4),
-         delta=metric_max)
-
-
-   # Exibição dos gráficos
-
-   st.divider()
-
-   hist1, hist2 = st.columns(2, gap = 'medium',
-                           vertical_alignment='center',
-                           border=False)
-
-   with hist1:
-      st.markdown("<h3 style='text-align: center;'>Distribuição das médias com reposição</h3>", unsafe_allow_html=True)
-      st.pyplot(fig_rep)
-
-   with hist2:
-      st.markdown("<h3 style='text-align: center;'>Distribuição das médias sem reposição</h3>", unsafe_allow_html=True)
-      st.pyplot(fig_srep)
-
-   st.divider()
-   # Criando o gráfico de densidade
-
-   esp1, esp2, esp3 = st.columns([1.25, 2, 1.25])
+         # Calculando as métricas ----------------------
+         # Com reposição
+         minimo_cr = float(np.min(reposicao))
+         esperado_cr = float(np.mean(reposicao))
+         mediana_cr = float(np.median(reposicao))
+         dp_cr = float(np.std(reposicao))
+         max_cr = float(np.max(reposicao))
       
-   with esp2:
-         valores = reposicao + sem_reposicao
+         # Sem reposição
       
-         grupos = ['Com reposição'] * len(reposicao) + ['Sem reposição'] * len(sem_reposicao)
+         minimo_sr = float(np.min(sem_reposicao))
+         esperado_sr = float(np.mean(sem_reposicao))
+         mediana_sr = float(np.median(sem_reposicao))
+         dp_sr = float(np.std(sem_reposicao))
+         max_sr = float(np.max(sem_reposicao))
       
-         dicionario = {'Média': valores, 'Amostra': grupos}
+         # Cálculo da diferença para uso no st.metric
       
-         base = pd.DataFrame(dicionario)
+         metric_min = round(minimo_sr - minimo_cr, ndigits=2)
+         metric_mean = round(esperado_sr - esperado_cr, ndigits=2)
+         metric_median = round(mediana_sr - mediana_cr, ndigits=2)
+         metric_dp = round(dp_sr - dp_cr, ndigits=2)
+         metric_max = round(max_sr - max_cr, ndigits=2)
+      
+         # Reproduzindo os resultados ---------------
+      
+         st.subheader('🔁 Com reposição')
+      
+         c1, c2, c3, c4, c5 = st.columns(5)
+      
+         with c1:
+            st.metric(label = 'Mínimo',
+               value = round(minimo_cr, ndigits = 4))
+      
+         with c2:
+            st.metric(label = 'Valor esperado',
+               value = round(esperado_cr, ndigits = 4))
+      
+         with c3:
+            st.metric(label = 'Mediana',
+               value = round(mediana_cr, ndigits = 4))
+      
+         with c4:
+            st.metric(label = 'Desvio padrão',
+               value = round(dp_cr, ndigits = 4))
+      
+         with c5:
+            st.metric(label = 'Máximo',
+               value = round(max_cr, ndigits = 4))
             
-         fig, ax = plt.subplots()
-         sns.kdeplot(data=base, x='Média', hue='Amostra', fill=True, common_norm=False, alpha=0.25, ax=ax)
+         st.divider()
+      
+         st.subheader('🚫 Sem reposição')
+      
+         s1, s2, s3, s4, s5 = st.columns(5)
+      
+         with s1:
+            st.metric(label = 'Mínimo',
+               value = round(minimo_sr, ndigits = 4),
+               delta=metric_min)
+      
+         with s2:
+            st.metric(label = 'Valor esperado',
+               value = round(esperado_sr, ndigits = 4),
+               delta=metric_mean)
+      
+         with s3:
+            st.metric(label = 'Mediana',
+               value = round(mediana_sr, ndigits = 4),
+               delta=metric_median)
+      
+         with s4:
+            st.metric(label = 'Desvio padrão',
+               value = round(dp_sr, ndigits = 4),
+               delta=metric_dp)
+      
+         with s5:
+            st.metric(label = 'Máximo',
+               value = round(max_sr, ndigits = 4),
+               delta=metric_max)
+      
+      
+         # Exibição dos gráficos
+      
+         st.divider()
+      
+         hist1, hist2 = st.columns(2, gap = 'medium',
+                                 vertical_alignment='center',
+                                 border=False)
+      
+         with hist1:
+            st.markdown("<h3 style='text-align: center;'>Distribuição das médias com reposição</h3>", unsafe_allow_html=True)
+            st.pyplot(fig_rep)
+      
+         with hist2:
+            st.markdown("<h3 style='text-align: center;'>Distribuição das médias sem reposição</h3>", unsafe_allow_html=True)
+            st.pyplot(fig_srep)
+      
+         st.divider()
+         # Criando o gráfico de densidade
+      
+         esp1, esp2, esp3 = st.columns([1.25, 2, 1.25])
             
-         # Configurações do gráfico
-         ax.set_xlabel('Média')
-         ax.set_ylabel('Densidade')
-      
-         # Reproduzindo o gráfico
-         st.markdown("<h3 style='text-align: center;'>Curvas de densidade de Kernel por Amostra</h3>", unsafe_allow_html=True)
-      
-         st.pyplot(fig, dpi=200, bbox_inches='tight')
+         with esp2:
+               valores = reposicao + sem_reposicao
+            
+               grupos = ['Com reposição'] * len(reposicao) + ['Sem reposição'] * len(sem_reposicao)
+            
+               dicionario = {'Média': valores, 'Amostra': grupos}
+            
+               base = pd.DataFrame(dicionario)
+                  
+               fig, ax = plt.subplots()
+               sns.kdeplot(data=base, x='Média', hue='Amostra', fill=True, common_norm=False, alpha=0.25, ax=ax)
+                  
+               # Configurações do gráfico
+               ax.set_xlabel('Média')
+               ax.set_ylabel('Densidade')
+            
+               # Reproduzindo o gráfico
+               st.markdown("<h3 style='text-align: center;'>Curvas de densidade de Kernel por Amostra</h3>", unsafe_allow_html=True)
+            
+               st.pyplot(fig, dpi=200, bbox_inches='tight')
 
 
 except ValueError:
