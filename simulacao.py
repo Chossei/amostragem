@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
 import random
+import time
 
 
 def simulacao(amostra, populacao, n = 100000):
